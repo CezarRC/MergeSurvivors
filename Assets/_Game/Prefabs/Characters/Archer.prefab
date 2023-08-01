@@ -494,14 +494,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4e3eb456d757e4dbd07c863b3a1bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  fireRate: 2
+  health: 150
+  fireRate: 2.5
   special: 100
-  damage: 8
+  damage: 13
   critChance: 5
   range: 15
-  speed: 4
+  speed: 5
   luck: 1
+  buffs: {fileID: 2722969281906243066}
 --- !u!114 &2722969281906243065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2722969283654761975}
+  stats: {fileID: 2722969281906243067}
 --- !u!1 &2722969283064115604
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +659,7 @@ GameObject:
   - component: {fileID: 2722969283654761961}
   - component: {fileID: 2722969283654761974}
   - component: {fileID: 2722969283654761975}
+  - component: {fileID: 2534414232219364112}
   m_Layer: 6
   m_Name: CharacterSprite
   m_TagString: Untagged
@@ -751,6 +754,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2534414232219364112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722969283654761960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7ce78d8f388d04b9d40fd296ca3dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 2722969281906243064}
 --- !u!1 &2831387055294874347
 GameObject:
   m_ObjectHideFlags: 0

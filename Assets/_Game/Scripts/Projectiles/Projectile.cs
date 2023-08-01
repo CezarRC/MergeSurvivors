@@ -54,8 +54,8 @@ public class Projectile : MonoBehaviour
             float remainingHealth = e.TakeDamage(buffedDamage);
             if (remainingHealth <= 0)
             {
-                owner.GetComponent<Character>().AddExp(1f);
-                owner.GetComponent<Character>().AddSpecial(5f);
+                owner.GetComponent<Character>().AddExp(1.5f);
+                owner.GetComponent<Character>().AddSpecial(10f);
             }
             HitNumber.CreateHitNumber(collision.gameObject.transform.position, buffedDamage, crit);
             GameObject go = Instantiate(effectOnHit);

@@ -31,15 +31,7 @@ public class CharacterUpgrader : MonoBehaviour
     }
     public void SetUpgrade(Upgrade upgrade)
     {
-        characterStats.buffs.BuffBaseHealth(upgrade.healthBuff);
-        characterStats.buffs.BuffBaseFireRate(upgrade.fireRateBuff);
-        characterStats.buffs.BuffBaseCritChance(upgrade.critChanceBuff);
-        characterStats.buffs.BuffBaseDamage(upgrade.damageBuff);
-        characterStats.buffs.BuffBaseRange(upgrade.rangeBuff);
-        characterStats.buffs.BuffBaseSpecial(upgrade.specialBuff);
-        characterStats.buffs.BuffBaseSpeed(upgrade.speedBuff);
-        characterStats.buffs.BuffTotalExp(upgrade.expBuff);
-        characterStats.buffs.BuffTotalLuck(upgrade.luckBuff);
+        characterStats.GetBuffs().ApplyBuffs(upgrade);
         CloseUI();
     }
     void CloseUI()

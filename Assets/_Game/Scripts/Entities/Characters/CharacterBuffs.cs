@@ -82,4 +82,16 @@ public class CharacterBuffs : MonoBehaviour
         speedBuffMultiplier *= 1f + percentage / 100f;
     }
 
+    public void ApplyBuffs(Upgrade upgrade)
+    {
+        BuffBaseHealth(upgrade.healthBuff);
+        BuffBaseFireRate(upgrade.fireRateBuff);
+        BuffBaseCritChance(upgrade.critChanceBuff);
+        BuffBaseDamage(upgrade.damageBuff);
+        BuffBaseRange(upgrade.rangeBuff);
+        BuffBaseSpecial(upgrade.specialBuff);
+        BuffBaseSpeed(upgrade.speedBuff);
+        BuffTotalExp(upgrade.expBuff);
+        BuffTotalLuck(upgrade.luckBuff);
+    }
 }
