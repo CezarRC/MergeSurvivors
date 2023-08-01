@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] float enemiesPerSecond = 1;
+    [SerializeField] float enemiesPerSecond = 0.75f;
     [SerializeField] bool shouldSpawn = true;
 
     Transform groupTransform;
@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
     int currentWave = 1;
     float startTime = 0;
+    float currentMultiplier = 1.15f;
     private void Start()
     {
         groupTransform = Group.CurrentGroup.transform;
@@ -27,11 +28,12 @@ public class EnemySpawner : MonoBehaviour
             if (Time.time > startTime + 30)
             {
                 currentWave++;
+                currentMultiplier *= 1.15f;
                 startTime = Time.time;
                 if (currentWave % 2 == 0) SpawnEnemyInRadius(groupTransform.position, bossPrefab, 20f);
             }
             SpawnEnemyInRadius(groupTransform.position, tempEnemiesToSpawn[Random.Range(0, tempEnemiesToSpawn.Count)], 20f);
-            yield return new WaitForSeconds(1f / enemiesPerSecond * (1.5f * currentWave));
+            yield return new WaitForSeconds(1f / (enemiesPerSecond * (1.15f * currentWave)));
         }
     }
     public static void SpawnEnemyInRadius(Vector2 position, GameObject enemy, float radius)

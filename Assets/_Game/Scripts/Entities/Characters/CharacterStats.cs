@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    [SerializeField] float health;
-    [SerializeField] float fireRate;
-    [SerializeField] float special;
-    [SerializeField] float damage;
-    [SerializeField] float critChance;
-    [SerializeField] float range;
-    [SerializeField] float speed;
-    [SerializeField] float luck;
 
     public float BaseHealth { get => health ; }
     public float BaseFireRate { get => fireRate; }
@@ -21,13 +13,21 @@ public class CharacterStats : MonoBehaviour
     public float BaseRange { get => range; }
     public float BaseSpeed { get => speed; }
 
-    public CharacterBuffs buffs { get; private set; }
+    [SerializeField] private float health;
+    [SerializeField] private float fireRate;
+    [SerializeField] private float special;
+    [SerializeField] private float damage;
+    [SerializeField] private float critChance;
+    [SerializeField] private float range;
+    [SerializeField] private float speed;
+    [SerializeField] private float luck;
 
-    void Start()
+    [SerializeField] private CharacterBuffs buffs;
+
+    public CharacterBuffs GetBuffs()
     {
-        buffs = GetComponent<CharacterBuffs>();
+        return buffs;
     }
-
     public float GetBuffedHealth()
     {
         return health * buffs.healthBuffMultiplier;

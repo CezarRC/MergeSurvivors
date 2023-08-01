@@ -50,7 +50,11 @@ public class Enemy : MonoBehaviour
     }
     private void CheckDespawn()
     {
-        if ((group.transform.position - transform.position).sqrMagnitude > 100*100)
+        //This check MUST be done in 2D.
+        Vector2 groupPosition = group.transform.position;
+        Vector2 enemyPosition = transform.position;
+
+        if ((groupPosition - enemyPosition).sqrMagnitude > 100*100)
         {
             gameObject.SetActive(false);
         }

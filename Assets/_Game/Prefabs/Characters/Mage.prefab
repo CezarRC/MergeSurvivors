@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 3579767392949916437}
   - component: {fileID: 3579767392949916436}
   - component: {fileID: 3579767392949916434}
+  - component: {fileID: 516672799034809569}
   m_Layer: 6
   m_Name: CharacterSprite
   m_TagString: Untagged
@@ -459,6 +460,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &516672799034809569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579767392949916439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7ce78d8f388d04b9d40fd296ca3dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 3579767393284757051}
 --- !u!1 &3579767393284757057
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,14 +602,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4e3eb456d757e4dbd07c863b3a1bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  fireRate: 1.5
+  health: 130
+  fireRate: 2
   special: 100
-  damage: 13
+  damage: 16
   critChance: 2
   range: 10
-  speed: 4
+  speed: 5
   luck: 1
+  buffs: {fileID: 3579767393284757048}
 --- !u!114 &3579767393284757046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3579767392949916434}
+  stats: {fileID: 3579767393284757049}
 --- !u!1 &3579767393331995221
 GameObject:
   m_ObjectHideFlags: 0

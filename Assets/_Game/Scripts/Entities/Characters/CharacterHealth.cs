@@ -25,7 +25,7 @@ public class CharacterHealth : MonoBehaviour
     private IEnumerator Init()
     {
         stats = GetComponent<CharacterStats>();
-        if (stats.buffs == null)
+        if (stats.GetBuffs() == null)
         {
             yield return null;
         }
